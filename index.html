@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>أبها - بهية على طول السنة</title>
+<meta name="description" content="تعرف على مدينة أبها، قلب الجمال السعودي وطبيعتها الساحرة">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    text-align: center;
+}
+
+/* زر الترحيب */
+.welcome-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #6a5acd, #8a2be2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* شاشة الترحيب */
+.welcome-screen {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* محتوى الصفحة */
+.main-content {
+    margin-top: 120px;
+}
+
+/* زر القائمة */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* قائمة همبرجر */
+.nav-menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 20px;
+    background: #eee;
+    padding: 10px;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- زر همبرجر -->
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<div id="menu" class="nav-menu">
+    <p>الرئيسية</p>
+    <p>عن أبها</p>
+    <p>تواصل</p>
+</div>
+
+<!-- زر الترحيب -->
+<button id="welcomeBtn" class="welcome-btn">🌸 ترحيب</button>
+
+<!-- شاشة الترحيب -->
+<div id="welcomeScreen" class="welcome-screen">
+    <h1>أبها، بهية على طول السنة 🌸</h1>
+    <h2>أبها، قلب الجمال السعودي 💚</h2>
+    <button onclick="closeWelcome()">دخول الصفحة</button>
+</div>
+
+<!-- محتوى الصفحة -->
+<div class="main-content">
+    <h1>مدينة أبها</h1>
+    <p>أبها مدينة سياحية جميلة تتميز بطبيعتها الخلابة وأجوائها المعتدلة.</p>
+</div>
+
+<script>
+const welcomeBtn = document.getElementById("welcomeBtn");
+const welcomeScreen = document.getElementById("welcomeScreen");
+
+welcomeBtn.addEventListener("click", function() {
+    welcomeScreen.style.display = "flex";
+});
+
+function closeWelcome() {
+    welcomeScreen.style.display = "none";
+}
+
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
